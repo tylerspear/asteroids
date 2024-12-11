@@ -40,6 +40,10 @@ def main():
             if member.check_collisions(player):
                 print("Game over!")
                 game_over = True
+            for shot in shots:
+                if member.check_collisions(shot):
+                    member.split()
+                    shot.kill()
         
         for member in drawable:
             member.draw(screen)
